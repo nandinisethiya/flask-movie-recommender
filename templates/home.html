@@ -1,0 +1,25 @@
+
+{% extends "base.html" %}
+{% block title %}Jefnix — Discover Amazing Movies{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <h1 class="brand-title">JEFNIX</h1>
+  <h2 class="tagline">Discover Amazing Movies</h2>
+  <p class="hero-text">Find your next favourite movie from different genres.</p>
+  <a href="{{ url_for('movie_page') }}" class="explore-btn">Explore Movies</a>
+</section>
+
+<section class="featured">
+  <h2 class="section-title">Featured Movies</h2>
+  <div class="movie-grid">
+    {% for movie in movies %}
+    <div class="movie-card">
+      <span class="rating-badge">{{ movie.rating }}</span>
+      <h3 class="movie-title">{{ movie.title }}</h3>
+      <p class="movie-genre">{{ movie.genre }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

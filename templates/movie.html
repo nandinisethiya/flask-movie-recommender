@@ -1,0 +1,15 @@
+
+
+{% extends "base.html" %}
+{% block title %}{{ movie.title }} — Jefnix{% endblock %}
+
+{% block content %}
+<section class="movie-detail">
+  <div class="detail-card">
+    <span class="rating-badge large">{{ movie.rating }}</span>
+    <h1 class="movie-title-large">{{ movie.title }}</h1>
+    <p class="movie-genre-large">{{ movie.genre }}</p>
+  </div>
+  <a href="{{ url_for('movie_page') }}" class="back-link">&larr; Back to Movies</a>
+</section>
+{% endblock %}

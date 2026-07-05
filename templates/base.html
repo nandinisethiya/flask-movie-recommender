@@ -1,0 +1,36 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}Jefnix{% endblock %}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="{{ url_for('home') }}" class="logo">JEFNIX</a>
+    <div class="nav-links">
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('movie_page') }}">Movies</a>
+    </div>
+  </nav>
+  <div class="filmstrip"></div>
+</header>
+
+<main class="content">
+  {% block content %}{% endblock %}
+</main>
+
+<div class="filmstrip"></div>
+<footer class="site-footer">
+  <p>&copy; 2026 Jefnix — built for practice, made with love.</p>
+</footer>
+
+</body>
+</html>
